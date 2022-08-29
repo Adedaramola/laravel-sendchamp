@@ -27,7 +27,12 @@ final class VoiceResource extends Resource
         return $response->object();
     }
 
-    public function getDeliveryReport()
+    public function getDeliveryReport(string $voice_uid)
     {
+        $response = $this->client->get(`/voice/status/{$voice_uid}`);
+
+        $this->throwFailedErrorResponse($response);
+
+        return $response->object();
     }
 }
