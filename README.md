@@ -88,6 +88,35 @@ Sendchamp::voice()->fileToVoice(new FileToVoiceRequest(
 Sendchamp::voice()->getDeliveryReport();
 ```
 
+### Verification
+```php
+use Adedaramola\Sendchamp\Facades\Sendchamp;
+use Adedaramola\Sendchamp\Http\Requests\SendOtpRequest;
+
+// send otp
+Sendchamp::verification()->sendOtp(new SendOtpRequest(
+    $channel,
+    $sender,
+    $token_type,
+    $token_length
+));
+
+// verify otp
+Sendchamp::verification()->confirmOtp(
+    $verification_reference, $verification_code
+);
+```
+
+### Whatsapp
+```php
+use Adedaramola\Sendchamp\Facades\Sendchamp;
+
+Sendchamp::whatsapp()->sendText();
+Sendchamp::whatsapp()->sendVideo();
+Sendchamp::whatsapp()->sendAudio();
+Sendchamp::whatsapp()->sendSticker();
+```
+
 ### Wallet
 ```php
 use Adedaramola\Sendchamp\Facades\Sendchamp;
@@ -98,8 +127,8 @@ Sendchamp::wallet()->getBalance();
 
 ## Todo List
 
-* [ ] Whatsapp Resource
 * [ ] Email Resource
+* [ ] Customer Resource
 
 ## Contributing
 

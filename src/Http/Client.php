@@ -8,6 +8,7 @@ use Closure;
 use Adedaramola\Sendchamp\Concerns\CanBuildRequests;
 use Adedaramola\Sendchamp\Http\Resources\EmailResource;
 use Adedaramola\Sendchamp\Http\Resources\SmsResource;
+use Adedaramola\Sendchamp\Http\Resources\VerificationResource;
 use Adedaramola\Sendchamp\Http\Resources\VoiceResource;
 use Adedaramola\Sendchamp\Http\Resources\WalletResource;
 use Adedaramola\Sendchamp\Http\Resources\WhatsappResource;
@@ -43,6 +44,11 @@ class Client
     public function voice(): VoiceResource
     {
         return new VoiceResource($this);
+    }
+
+    public function verification(): VerificationResource
+    {
+        return new VerificationResource($this);
     }
 
     public function email(): EmailResource

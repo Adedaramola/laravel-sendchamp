@@ -8,5 +8,6 @@ final class EmailResource extends Resource
 {
     public function send()
     {
+        
     }
 }
