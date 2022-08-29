@@ -20,7 +20,15 @@ final class VerificationResource extends Resource
         return $response->object();
     }
 
-    public function confirmOtp()
+    public function confirmOtp(string $verification_reference, string $verification_code)
     {
+        $response = $this->client->post('/verification/confirm', [
+            'verification_reference' => $verification_reference,
+            'verification_code' => $verification_code
+        ]);
+
+        $this->throwFailedErrorResponse($response);
+
+        return $response->object();
     }
 }
