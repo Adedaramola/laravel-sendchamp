@@ -9,11 +9,8 @@ use Adedaramola\Sendchamp\Http\Client;
 
 class Resource
 {
-    protected Client $client;
-
-    public function __construct(Client $client)
+    public function __construct(protected Client $client)
     {
-        $this->client = $client;
     }
 
     protected function throwFailedErrorResponse($response)

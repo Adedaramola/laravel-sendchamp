@@ -18,7 +18,7 @@ Laravel package to seamlessly integrate [Sendchamp API](https://sendchamp.com)
 
 You can install the package via composer:
 ```bash
-composer require adedaramola/sendchamp
+composer require adedaramola/laravel-sendchamp
 ```
 Publish the config file
 ```bash
@@ -76,6 +76,7 @@ Sendchamp::voice()->textToSpeech(new TextToSpeechRequest(
     $repeat
 ));
 
+// file-to-voice
 Sendchamp::voice()->fileToVoice(new FileToVoiceRequest(
     $customer_mobile_number,
     $path,
